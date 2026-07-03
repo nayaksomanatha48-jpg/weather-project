@@ -1,46 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="card">
+<div class="container py-4">
 
-    <div class="search">
-        <input type="text" id="city" placeholder="Enter city name">
-        <button onclick="getWeather()">🔍</button>
-    </div>
+    <div class="weather-container">
 
-    <div class="weather">
+        <h1 class="text-center mb-4">☀ Weather Dashboard</h1>
 
-        <img id="icon" src="" class="weather-icon">
+        <div class="search-box">
 
-        <h1 id="temp">--°C</h1>
+            <input
+                type="text"
+                id="cityInput"
+                class="form-control"
+                placeholder="Enter city name">
 
-        <h2 id="cityName">City</h2>
+            <button
+                class="btn btn-warning"
+                id="searchBtn">
+                Search
+            </button>
 
-        <div class="details">
+        </div>
 
-            <div class="col">
-                💧
-                <div>
-                    <p id="humidity">0%</p>
-                    <span>Humidity</span>
+        <div class="current-weather mt-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h2 id="cityName">
+                        City Name
+                    </h2>
+
+                    <h1 id="temperature">
+                        28°C
+                    </h1>
+
+                    <p id="weather">
+                        Clear Sky
+                    </p>
+
                 </div>
+
+                <div class="col-lg-4 text-center">
+
+                    <img
+                        id="weather_icon"
+                        src=""
+                        alt="Weather Icon"
+                        class="weather-icon">
+
+                </div>
+
             </div>
 
-            <div class="col">
-                🌬
-                <div>
-                    <p id="wind">0 km/h</p>
-                    <span>Wind Speed</span>
+        </div>
+
+        <div class="row mt-4 g-3">
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <h5>💧 Humidity</h5>
+
+                    <p id="humidity">
+                        75%
+                    </p>
+
                 </div>
+
             </div>
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <h5>🌬 Wind</h5>
+
+                    <p id="wind">
+                        12 km/h
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <h5>🌡 Pressure</h5>
+
+                    <p id="pressure">
+                        1012 hPa
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <h2 class="forecast-title mt-5">
+            3 Day Forecast
+        </h2>
+
+        <div
+            class="row mt-4"
+            id="forecastContainer">
 
         </div>
 
